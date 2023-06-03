@@ -1,3 +1,4 @@
 <?php 
-   require 'config/constants.php'
+   require 'config/constants.php';
+   $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME) or die("Connection Failed");  
 ?>

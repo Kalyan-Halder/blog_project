@@ -1,5 +1,5 @@
 <?php 
-   require '../config/database.php'
+   require 'config/database.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@
                         <img src="../images/avatar1.jpg" alt="">
                     </div>
                     <ul>
-                        <li><a href="<?php echo $ROOT_URL?>dashboard.php">Dashboard</a></li>
+                        <li><a href="<?php echo $ROOT_URL?>admin/index.php">Dashboard</a></li>
                         <li><a href="<?php echo $ROOT_URL?>logout.php">Logout</a></li>
                     </ul>
                 </li>

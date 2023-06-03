@@ -80,9 +80,8 @@ body{
 }
 
 section{
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 100vw;
-
 }
 h1,h2,h3,h4,h5{
     color: var(--color-white);
@@ -97,6 +96,7 @@ h2{
     margin: 1rem 0;
 }
 h3{
+    margin-top: 10px;
     font-size: 1.1rem;
     image-rendering: 0.8rem 0 0.5rem;
 }
@@ -113,7 +113,6 @@ a{
 img{
     display: block;
     width: 100%;
-    object-fit: cover;
 }
 
 
@@ -326,7 +325,8 @@ nav button{
 /* ==========================FEatured=====================================================================================================
 ================================================================================= */
 .featured{
-    margin-top: 4rem;
+    margin-top: 2rem;
+    padding: 50px 0 50px 0;
 }
 .featured_container{
     display: grid;
@@ -334,10 +334,17 @@ nav button{
     gap: 2rem;
 }
 .featured .post_thumbnail{
-    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
+.post_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 25px;
+}
 /* ========================== POSTS =====================================================================================================
 ================================================================================= */
 
@@ -556,17 +563,17 @@ input,textarea,select{
     gap: 1rem;
     align-items: center;
     padding: 1.6rem;
+    font-size: 1rem;
 }
 
 .dashboard aside ul li:not(:last-child) a {
-    border-bottom: 1px solid var(--color-gray-900);
+    border-bottom: 5px solid var(--color-gray-900);
 }
-.dashboard aside a:hover,.dashboard aside a:hover h5{
-    color: white;
-}
+ 
 .dashboard aside a.active{
     background-color: var(--color-gray-900);
-    color: var(--color-white); 
+    color: var(--color-white);
+    border-left: 5px solid red;
 }
 .dashboard main{
     margin-left:1.5rem

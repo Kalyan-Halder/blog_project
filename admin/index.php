@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../manage-users.php" ><i class="fa-solid fa-people-arrows"></i>
+                    <a href="./manage-users.php" ><i class="fa-solid fa-people-arrows"></i>
                         <h5>Manage User</h5>
                     </a>                  
                 </li>
@@ -32,7 +32,7 @@
                     </a>                
                 </li>
                 <li>
-                    <a href="../manage-categories.php" ><i class="fa-solid fa-bars-progress"></i>
+                    <a href="./manage-categories.php" ><i class="fa-solid fa-bars-progress"></i>
                         <h5>Manage Categories</h5>
                     </a>        
                 </li>
@@ -53,30 +53,30 @@
                     <tr>
                         <td>Adventure Awaits: The Ultimate Guide to Solo Travel</td>
                         <td>Travel</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Unlocking the Power of Artificial Intelligence: Applications and Impacts</td>
                         <td>Tech</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr> <tr>
                         <td>The Rise of Remote Work: Advantages, Challenges, and Best Practices</td>
                         <td>Life</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr> <tr>
                         <td>Navigating the Cryptocurrency Market: A Beginner's Guide</td>
                         <td>Economic</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                     </tr> <tr>
                         <td>The Art of Mindfulness: Cultivating Inner Peace in a Busy World</td>
                         <td>Health</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                 </tbody>
             </table>

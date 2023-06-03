@@ -1,23 +1,22 @@
 <?php 
-   include './partials/header.php';
+  include 'partials/header.php'
 ?>
-
 <section class="dashboard">
     <div class="container dashboard_container">
         <aside>
             <ul>
                 <li>
-                    <a href="./admin/add-post.php"><i class="fa-solid fa-pen"></i>
+                    <a href="add-post.php"><i class="fa-solid fa-pen"></i>
                         <h5>Add Post</h5>
                     </a>  
                 </li>
                 <li>
-                    <a href="./admin/dashboard.php"><i class="fa-solid fa-list-check"></i>
+                    <a href="index.php"><i class="fa-solid fa-list-check"></i>
                         <h5>Manage Post</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="./admin/add-user.php"><i class="fa-solid fa-user-plus"></i>
+                    <a href="add-user.php"><i class="fa-solid fa-user-plus"></i>
                         <h5>Add User</h5>
                     </a>
                 </li>
@@ -27,7 +26,7 @@
                     </a>                  
                 </li>
                 <li>
-                    <a href="./admin/add-category.php"><i class="fa-solid fa-puzzle-piece"></i>
+                    <a href="add-category.php"><i class="fa-solid fa-puzzle-piece"></i>
                         <h5>Add Category</h5>
                     </a>                
                 </li>
@@ -73,5 +72,5 @@
 
      
 <?php 
-   include './partials/footer.php';
- ?>
+   include '../partials/footer.php';
+?>
