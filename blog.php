@@ -20,7 +20,7 @@
     <div class="container posts_container">
         <article class="post">
             <div class="post_thumbnail single_post">
-                <img src="./images/blog76.jpg" alt="">
+                <img src="./images/blog1.jpg" alt="">
             </div>
             <div class="post_info">
                 <a href="category-postsphp" class="category_button">Tech</a>

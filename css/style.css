@@ -83,13 +83,20 @@ section{
     margin-top: 1rem;
     width: 100vw;
 }
-h1,h2,h3,h4,h5{
-    color: var(--color-white);
+h1,h3,h4{
+    color: var(--color-white-actual);
     line-height: 1.3;
 }
+h2{
+    color: var(--color-white-actual);
+}
 h1{
-    font-size: 3rem;
-    margin: 1rem 0;
+    font-size: 2rem;
+    padding: .6rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 0;
+    
 }
 h2{
     font-size: 1.4rem;
@@ -154,6 +161,7 @@ nav button{
 .nav_logo{
     font-weight: 600;
     font-size: 1.2rem;
+    padding: 10px;
 }
 .logo{
     display: flex;
@@ -240,6 +248,7 @@ nav button{
 /*======================BUTTON====================*/
 .btn{
     display: inline-block;
+    margin-top: .5rem;
     width: fit-content;
     padding: 0.6rem 1.2rem;
     background-color: var(--color-primary);
@@ -248,17 +257,25 @@ nav button{
     color: var(--color-white);
     transition: var(--transition);
 }
+.btn:hover{
+    background-color: var(--color-white-actual);
+}
 .btn.sm{
     padding: 0.3rem 0.7rem;
     font-size: 0.8rem;
     color: var(--color-white-actual);
 }
+.btn.sm:hover{
+    color: var(--color-white);
+}
 .btn.danger{
-    background-color: var(--color-red);
+    background-color: var(--color-white-actual);
+    color: var(--color-white);
 }
-.btn:hover{
-    background-color: var(--color-white);
+.btn.danger:hover{
+     background-color: var(--color-red);
 }
+
 
 
 
@@ -490,11 +507,22 @@ footer ul a:hover{
 ================General Form for multiple pages=========*/
 
 .form_section{
-   
     padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    padding-top: 6rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.header{
+    color: var(--color-white-actual);
 }
 .form_section-container{
     width: var(--form-width);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem;
+    border-radius: 5px;
 }
 .alert_message{
     background-color: red;
@@ -503,12 +531,14 @@ footer ul a:hover{
     border-radius: var(--card-border-radius-2);
 }
 .alert_message.error{
-    background: var(--color-red-light);
+    background: var(--color-gray-700);
     color: var(--color-red);
+    font-size: 1.5rem;
 }
 .alert_message.success{
-    background: var(--color-red-light);
+    background: var(--color-gray-700);
     color: var(--color-green);
+    font-size: 1.5rem;
 }
 .form_section-container form{
     display: flex;
@@ -547,15 +577,30 @@ input,textarea,select{
 ================DASHBOARD=========*/
 
 .dashboard{
-    margin-top: 6rem;
+   min-height: 100vh;
+   margin-top: 5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 .dashboard_container{
     display: grid;
+    min-height: 60vh;
     grid-template-columns: 14rem auto;
     gap: 1rem;
     background: var(--color-gray-900);
     padding: 2rem;
     margin-bottom: 5rem;
+    
+}
+.dashboard aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dashboard aside ul{
+    width: 100%;
 }
 .dashboard aside a{
     background-color: var(--color-primary);
@@ -573,10 +618,9 @@ input,textarea,select{
 .dashboard aside a.active{
     background-color: var(--color-gray-900);
     color: var(--color-white);
-    border-left: 5px solid red;
 }
 .dashboard main{
-    margin-left:1.5rem
+    margin-left:1.5rem;
 }
 .dashboard main h2{
     margin:0 0 2rem 0;
@@ -610,5 +654,29 @@ input,textarea,select{
     cursor: default;
     transition: var(--transition);
 }
+
+
+
+@media print {
+    nav{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    .container{
+    
+    }
+    .dashboard .container aside{
+        display: none;
+    }
+    main{
+        width: 66.6vw;
+    }table, th, td {
+        border: 1px solid black;
+    }
+    
+}
+
 
 

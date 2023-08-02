@@ -4,9 +4,9 @@ include './partials/header.php';
 
 <saction class="singlepost">
   <div class="container singlepost_container">
-    <h2>
+    <h1>
       The Enchanting Wilderness of the Sundarbans Forest
-    </h2>
+    </h1>
     <div class="post_author">
       <div class="post_author-avatar">
         <img src="./images/avatar3.jpg" alt="">
@@ -17,7 +17,7 @@ include './partials/header.php';
       </div>
     </div>
     <div class="singlepost_thumbnail">
-      <img src="./images/blog103.jpg" alt="" />
+      <img src="./images/blog_sundarbans.jpg" alt="" />
     </div>
     <p>
       The Sundarbans Forest, located in the southwestern part of Bangladesh and the southeastern part of India, is a mesmerizing natural wonder that captivates visitors from around the world. This unique mangrove forest is renowned for its rich biodiversity, stunning landscapes, and distinctive ecosystem. Stretching across approximately 10,000 square kilometers, the Sundarbans is not only a UNESCO World Heritage Site but also the largest mangrove forest on the planet.

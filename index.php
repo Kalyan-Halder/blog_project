@@ -42,7 +42,7 @@ include './partials/header.php';
     <div class="container posts_container">
         <article class="post">
             <div class="post_thumbnail single_post">
-                <img src="./images/blog76.jpg" alt="">
+                <img src="./images/blog1.jpg" alt="">
             </div>
             <div class="post_info">
                 <a href="category-postsphp" class="category_button">Tech</a>
@@ -118,7 +118,7 @@ include './partials/header.php';
         </article>
         <article class="post">
             <div class="post_thumbnail single_post">
-                <img src="./images/blog35.jpg" alt="">
+                <img src="./images/blog5.jpg" alt="">
             </div>
             <div class="post_info">
                 <a href="category-posts.php" class="category_button">Health</a>
@@ -137,7 +137,7 @@ include './partials/header.php';
         </article>
         <article class="post">
             <div class="post_thumbnail single_post">
-                <img src="./images/blog45.jpg" alt="">
+                <img src="./images/blog6.jpg" alt="">
             </div>
             <div class="post_info">
                 <a href="category-posts.php" class="category_button">Universe</a>

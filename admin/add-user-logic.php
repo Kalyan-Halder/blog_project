@@ -12,24 +12,26 @@
      $createpassword = filter_var($_POST['createpassword'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
      $confirmpassword = filter_var($_POST['confirmpassword'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
      $avatar = $_FILES['avatar'];
+     $is_admin = filter_var($_POST['userrole'],FILTER_SANITIZE_NUMBER_INT);
+
 
 
      if(!$firstname){
-        $_SESSION['signup']="Please Enter Your First Name";
+        $_SESSION['add-user']="Please Enter Your First Name";
      }else if(!$lastname){
-        $_SESSION['signup']="Please Enter Your Last Name";
+        $_SESSION['add-user']="Please Enter Your Last Name";
      }else if(!$username){
-        $_SESSION['signup']="Please Enter Your Username";
+        $_SESSION['add-user']="Please Enter Your Username";
      }else if(!$email){
-        $_SESSION['signup']="Please Enter Your Email";
+        $_SESSION['add-user']="Please Enter Your Email";
      }else if(strlen($createpassword)<8 || strlen($confirmpassword)<8){
-        $_SESSION['signup']="Password must be atleast 8 Characters Long";
+        $_SESSION['add-user']="Password must be atleast 8 Characters Long";
      }else if(!$avatar['name']){
-        $_SESSION['signup']="Enter Avatar";
+        $_SESSION['add-user']="Enter Avatar";
      }else{
       
          if($createpassword !== $confirmpassword){
-            $_SESSION['signup']="Passwords Do not match";
+            $_SESSION['add-user']="Passwords Do not match";
          }else{
            
             $hashedpassword = password_hash($createpassword,PASSWORD_DEFAULT);
@@ -38,13 +40,13 @@
             $user_check_query = "select * from users where username='$username' or email='$email'";
             $user_check_result = mysqli_query($conn,$user_check_query) ;
             if(mysqli_num_rows($user_check_result)>0){
-              $_SESSION['signup']="Username or Email already exists";
+              $_SESSION['add-user']="Username or Email already exists";
             }else{
         
               $time = time();
               $avatar_name = $time . $avatar['name'];
               $avatar_temp_name = $avatar['tmp_name'];
-              $avatar_path = 'images/avatars/' . $avatar_name;
+              $avatar_path = '../images/avatars/' . $avatar_name;
 
               $allowed_files = ['png','jpg','jpeg'];
               $extention = explode('.',$avatar_name);
@@ -55,28 +57,29 @@
                    
                    move_uploaded_file($avatar_temp_name,$avatar_path);
                 }else{
-                  $_SESSION['signup']="File size too big. Upload less than 1mb";
+                  $_SESSION['add-user']="File size too big. Upload less than 1mb";
                 }
               }else{
-                  $_SESSION['signup']="File should be png,jpg or jepg";
+                  $_SESSION['add-user']="File should be png,jpg or jepg";
               }
             }
          }
      } 
-     if(isset($_SESSION['signup'])){
-      
-        header('location:'. ROOT_URL . 'signup.php');
+     if(isset($_SESSION['add-user'])){
+        echo "error in line 69";
+        header('location:'. ROOT_URL . '/admin/add-user.php');
         die();
      }else{
-        $insert_user = "insert into users (firstname,lastname,username,email,password,avatar,is_admin) values('$firstname','$lastname','$username','$email','$hashedpassword','$avatar_name',0)";
+        $insert_user = "insert into users (firstname,lastname,username,email,password,avatar,is_admin) values('$firstname','$lastname','$username','$email','$hashedpassword','$avatar_name','$is_admin')";
         $insert = mysqli_query($conn,$insert_user);
         if(!mysqli_errno($conn)){
-          $_SESSION['signup-success']="Registration Completed. Please Login";
-          header('location:'.ROOT_URL.'signin.php');
+          $_SESSION['add-user-success']="New user $firstname $lastname added";
+          header('location:'.ROOT_URL.'admin/manage-users.php');
           die();
         }
      }
   }else{
-    header('location:'.ROOT_URL.'signup.php');
-    die();
+   header('location:'.ROOT_URL.'admin/add-user.php');
+   die();
+   
   }

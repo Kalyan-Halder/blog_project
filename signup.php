@@ -16,12 +16,20 @@
 
 
 <section class="form_section">
+    <div class="logo">
+        <a href="index.php" class="nav_logo"><i class="fa-solid fa-k icon"></i>alyan's<i class="fa-solid fa-i icon"></i>nsights <i class="fa-solid fa-brain icon"></i></a>
+    </div>
     <div class="container form_section-container">
-        <h2>sign Up</h2>
-        <div class="alert_message error">
-            <p>This is an error message</p>
-
-        </div>
+        <h2 class="header">Sign Up</h2>
+         <?php if(isset($_SESSION['signup'])): ?>
+          <div class="alert_message error">
+            <p>
+                <?= $_SESSION['signup'];
+                unset($_SESSION['signup']);
+                ?>
+            </p>
+          </div>
+          <?php endif ?>
         <form action="<?php echo ROOT_URL?>signup-logic.php" enctype="multipart/form-data" method="POST">
             <input type="text" name="firstname" placeholder="First Name">
             <input type="text" name="lastname" placeholder="Last Name">

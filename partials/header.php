@@ -1,5 +1,11 @@
 <?php 
  require 'config/database.php';
+ if(isset($_SESSION['user-id'])){
+    $id= filter_var($_SESSION['user-id'],FILTER_SANITIZE_NUMBER_INT);
+    $query = "select avatar from users where id=$id";
+    $result = mysqli_query($conn,$query);
+    $avatar = mysqli_fetch_assoc($result);
+ }
 ?>
 
 <!DOCTYPE html>
@@ -27,17 +33,20 @@
                 <li><a href="<?php echo ROOT_URL?>about.php">About</a></li>
                 <li><a href="<?php echo ROOT_URL?>services.php">Services</a></li>
                 <li><a href="<?php echo ROOT_URL?>contact.php">Contact</a></li>
-                <li><a href="<?php echo ROOT_URL?>signin.php">Signin</a></li>
-                <!------- -- -->
-                <li class="nav_profile"> 
-                    <div class="avatar">
-                        <img src="./images/avatar1.jpg" alt="">
-                    </div>
-                    <ul>
+                <?php if(isset($_SESSION['user-id'])) : null ?>
+                    <li class="nav_profile"> 
+                      <div class="avatar">
+                          <img src="<?php echo ROOT_URL.'images/avatars/'.$avatar['avatar'] ?>" alt="">
+                      </div>
+                      <ul>
                         <li><a href="<?php echo ROOT_URL?>admin/index.php">Dashboard</a></li>
                         <li><a href="<?php echo ROOT_URL?>logout.php">Logout</a></li>
-                    </ul>
-                </li>
+                      </ul>
+                    </li>
+                <?php else : ?>
+                    <li><a href="<?php echo ROOT_URL?>signin.php">Signin</a></li>
+                <?php endif ?>
+                <!------- -- -->
              </ul>
              
              <button id="open_nab-btn"></button>
